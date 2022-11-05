@@ -17,13 +17,19 @@ router.get('/', (req, res) => {
   
 });
 
-router.get('/:id', (req, res) => {
+router.get('/:id', (req, res) => { //select all genres for given movie ID
   const query = `SELECT title , json_agg(name) AS genre 
                   FROM "genres"
                   LEFT JOIN movies_genres ON movies_genres.genre_id = genres.id
                   LEFT JOIN movies ON movies.id = movies_genres.movie_id
                   WHERE movies.id = $1
-                  GROUP BY movies.title;`
+                  GROUP BY movies.title;`;
+  pool.query(query, [req.params.id])
+    console.log('getting genres for movie with id of ', req.params.id)
+    .then(dbRes => {
+      //send back the first item in the array
+      res.send(dbRes.rows[0])
+    })
 })
 
 module.exports = router;
