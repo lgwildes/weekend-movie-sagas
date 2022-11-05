@@ -18,8 +18,8 @@ function MovieList() {
             <h1>MovieList</h1>
             <section className="movies">
                 {movies.map(movie => {
-                    return (
-                        <div key={movie.id} >
+                    return ( // each poster/title links to a details page with that movie's ID in the url
+                        <div key={movie.id} > 
                             <Link to={{pathname: `/details/${movie.id}`}}>
                             <h3>{movie.title}</h3>
                             <img src={movie.poster} alt={movie.title}/>
