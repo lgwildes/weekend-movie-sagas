@@ -17,4 +17,13 @@ router.get('/', (req, res) => {
   
 });
 
+router.get('/:id', (req, res) => {
+  const query = `SELECT title , json_agg(name) AS genre 
+                  FROM "genres"
+                  LEFT JOIN movies_genres ON movies_genres.genre_id = genres.id
+                  LEFT JOIN movies ON movies.id = movies_genres.movie_id
+                  WHERE movies.id = $1
+                  GROUP BY movies.title;`
+})
+
 module.exports = router;

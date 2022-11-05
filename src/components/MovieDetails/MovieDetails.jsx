@@ -5,7 +5,7 @@ import { useDispatch, useSelector } from 'react-redux';
 function MovieDetails() {
 
     const history = useHistory();
-    const genres = useSelector(store => store.genres)
+    
 
     return (
         <>
