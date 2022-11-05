@@ -1,7 +1,8 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import {HashRouter as Router, Route, } from 'react-router-dom';
+import {HashRouter as Router, Route, Link } from 'react-router-dom';
 import './MovieList.css'
+
 
 function MovieList() {
 
@@ -19,8 +20,10 @@ function MovieList() {
                 {movies.map(movie => {
                     return (
                         <div key={movie.id} >
+                            <Link to={{pathname: `/details/${movie.id}`}}>
                             <h3>{movie.title}</h3>
                             <img src={movie.poster} alt={movie.title}/>
+                            </Link>
                         </div>
                     );
                 })}
