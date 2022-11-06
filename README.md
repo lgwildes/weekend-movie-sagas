@@ -9,17 +9,17 @@ My goal was to allow users to easily navigate between all their films. It was al
 
 ## Technologies used
 
-React.js
-Redux.js
-Javascript
-MUI
-HTML/CSS
-Express
-Node.js
+React.js, 
+Redux.js, 
+Javascript, 
+MUI, 
+HTML/CSS, 
+Express, 
+Node.js, 
 PostgreSQL
 
 
-**Contact**
+## Contact
 Please contact Lydia Wildes Schnurpel with any questions at  lydiawildes1@gmail.com 
 
 For more of my projects please visit my Github https://github.com/lgwildes
