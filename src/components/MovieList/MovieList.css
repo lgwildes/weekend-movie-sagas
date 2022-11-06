@@ -1,4 +1,13 @@
+body {
+   
+    background-image: url("blue-purple-green.jpg");
+    background-size:cover;
+    color: white;
+}
+
 .movies {
     display : flex;
     flex-wrap: wrap;
+    color: black;
+   
 }
