@@ -4,9 +4,9 @@ import { useDispatch, useSelector } from 'react-redux';
 import './MovieDetails.css'
 //import MUI elements
 import Card from '@mui/material/Card';
-
-
 import { Button } from "@material-ui/core";
+
+
 
 
 function MovieDetails() {
@@ -17,6 +17,7 @@ function MovieDetails() {
     const movie = useSelector(store => store.movies.find((movie) => movie.id == params.id));
     const genres = useSelector(store => store.movieGenres)
     
+
 
     useEffect( () => {
         // console.log('params is ', params.id);
