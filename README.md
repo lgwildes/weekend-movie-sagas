@@ -1,6 +1,6 @@
 # My Film Collection
 
-This app allows the user to view their film colleciton. From the homepage, the user may click on any of the titles to see a detailed view of the movie that includes genres and a detailed description. Users may navigate back to the full collection by clicking the 'back to collection' button. 
+This app allows the user to view their film collection. From the homepage, the user may click on any of the titles to see a detailed view of the movie that includes genres and a detailed description. Users may navigate back to the full collection by clicking the 'back to collection' button. 
 
 ## Description
 
