@@ -5,9 +5,9 @@ import { useDispatch, useSelector } from 'react-redux';
 function MovieDetails() {
     const dispatch = useDispatch();
     const history = useHistory();
-    const genres = useSelector(store => store.genres);
     const params = useParams();
     const movie = useSelector(store => store.movies.find((movie) => movie.id == params.id));
+    const genres = useSelector(store => store.movieGenres)
     
 
     useEffect( () => {
@@ -35,7 +35,11 @@ function MovieDetails() {
             <h4>{movie.title}</h4>
             <h4>Poster</h4>
             <h4>{movie.description}</h4>
-            <h5>Genres from Redux</h5>
+            {genres.map( genre => (
+                <h5>{genre}</h5>
+            )
+                
+            )}
 
         </>
     ) 
