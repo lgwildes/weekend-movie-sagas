@@ -16,7 +16,7 @@ function MovieList() {
 
     return (
         <main>
-            <h1>MovieList</h1>
+            <h1>My Film Collection</h1>
             <section className="movies">
                 {movies.map(movie => {
                     return ( // each poster/title links to a details page with that movie's ID in the url

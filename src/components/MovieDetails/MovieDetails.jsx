@@ -26,17 +26,16 @@ function MovieDetails() {
         <button // button returns user to homepage List of movies
          onClick={() => {history.push('/')}} >Back to List
         </button>
-        <h1>Details here!</h1>
-            <h4>{movie.title}</h4> 
+            <h1>{movie.title}</h1> 
             <img src={movie.poster}/> 
             {genres.map( genre => (  //map and display each genre for movie
                 <div key={genre.id}>
-                <h5>{genre}</h5>
+                <h3>{genre}</h3>
                 </div>
             )
                 
             )}
-            <h4>{movie.description}</h4>
+            <p>{movie.description}</p>
             
 
         </>

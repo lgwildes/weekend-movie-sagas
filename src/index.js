@@ -79,7 +79,7 @@ const genres = (state = [], action) => {
             return state;
     }
 }
-
+// Used to store genre(s) for specific movie on details page
 const movieGenres = (state = [], action) => {
     switch (action.type) {
         case 'SET_MOVIE_GENRES':
