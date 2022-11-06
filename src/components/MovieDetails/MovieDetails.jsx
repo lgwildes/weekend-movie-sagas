@@ -24,7 +24,7 @@ function MovieDetails() {
     return (
         <>
         <button // button returns user to homepage List of movies
-         onClick={() => {history.push('/')}} >Back to List
+         onClick={() => {history.push('/')}} >Back to Collection
         </button>
             <h1>{movie.title}</h1> 
             <img src={movie.poster}/> 
