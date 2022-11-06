@@ -1,6 +1,7 @@
 import { useHistory, useParams } from "react-router-dom";
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import './MovieDetails.css'
 
 function MovieDetails() {
     const dispatch = useDispatch();
