@@ -4,11 +4,10 @@ import { useDispatch, useSelector } from 'react-redux';
 import './MovieDetails.css'
 //import MUI elements
 import Card from '@mui/material/Card';
-import CardContent from '@mui/material/CardContent';
-import CardMedia from '@mui/material/CardMedia';
+
 
 import { Button } from "@material-ui/core";
-import { red } from "@material-ui/core/colors";
+
 
 function MovieDetails() {
     const dispatch = useDispatch();
@@ -37,7 +36,8 @@ function MovieDetails() {
                 variant="contained"
                 onClick={() => {history.push('/')}} >Back to Collection
             </Button>
-                <Card sx={{ width: 500, m: 2, p:5, boxShadow: 3}}>
+                {/* this sets some CSS parameters for each card element */}
+                <Card sx={{ width: 500, m: 2, p:5, boxShadow: 3}}> 
                     <h1>{movie.title}</h1> 
                     <img src={movie.poster}/> 
                     <div className="genres">
