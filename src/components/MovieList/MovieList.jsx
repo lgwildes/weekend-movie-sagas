@@ -9,6 +9,7 @@ import CardMedia from '@mui/material/CardMedia';
 import Grid from "@material-ui/core/Grid";
 import Typography from '@mui/material/Typography';
 import { CardActionArea } from '@mui/material';
+import { shadows } from '@mui/system';
 
 
 function MovieList() {
@@ -32,7 +33,7 @@ function MovieList() {
                  
                             <div  key={movie.id}>
                             <Link to={{pathname: `/details/${movie.id}`}}>
-                                <Card sx={{ width: 230, m: 2, }}>
+                                <Card sx={{ width: 230, m: 2, boxShadow: 3}}>
                                     <CardActionArea  >
                                         <CardMedia
                                             component="img"
