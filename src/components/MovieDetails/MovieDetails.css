@@ -1,3 +1,13 @@
+@font-face {
+    font-family: 'Jurassic Park';
+    src: url('../../JurassicPark.woff2') format('woff2'),
+        url('../../JurassicPark.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+
 .movie-item-container {
     margin: 3em;
     display: flex;
@@ -11,6 +21,21 @@ p {
     line-height: 1.5;
 }
 .genres {
-   direction: flex;
-   flex-direction: row;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.App .MuiButtonBase-root {
+    background-color: white;
+}
+.movie-item-container .MuiButtonBase-root:hover {
+
+    background-color: rgb(41, 110, 133);
+}
+
+.App .my-super-special-btn {
+    font-family: 'Jurassic Park';
+    font-size: larger;
+    
 }

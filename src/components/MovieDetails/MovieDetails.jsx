@@ -32,7 +32,7 @@ function MovieDetails() {
         <div className="movie-item-container">
 
             <Button // button returns user to homepage List of movies
-                className="button"
+                className="button my-super-special-btn"
                 variant="contained"
                 onClick={() => {history.push('/')}} >Back to Collection
             </Button>
