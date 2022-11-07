@@ -19,7 +19,7 @@ function MovieDetails() {
     useEffect( () => {
         // console.log('params is ', params.id);
         dispatch ({
-            type: 'FETCH_GENRES_FOR_MOVIE',
+            type: 'FETCH_MOVIE_DETAILS',
             payload: params.id
         })
 

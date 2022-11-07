@@ -20,7 +20,7 @@ import axios from 'axios';
 function* rootSaga() {
     yield takeEvery('FETCH_MOVIES', fetchAllMovies);
     yield takeEvery('FETCH_GENRES', fetchAllGenres); //intercepts dispatch and calls function
-    yield takeEvery ('FETCH_GENRES_FOR_MOVIE', fetchMovieDetails);
+    yield takeEvery ('FETCH_MOVIE_DETAILS', fetchMovieDetails);
 }
 
 function* fetchAllMovies() {

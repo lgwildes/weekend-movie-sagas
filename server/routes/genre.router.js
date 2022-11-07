@@ -19,7 +19,7 @@ router.get('/', (req, res) => {
 
 router.get('/:id', (req, res) => { //select all genres for given movie ID
 
-  console.log('in router.get MOVIE GENREEEEEE 😠', req.params.id)
+  console.log('in router.get MOVIE GENRE', req.params.id)
   const query = `  SELECT json_agg(name) AS genre , movies.*
                   FROM "genres"
                   LEFT JOIN movies_genres ON movies_genres.genre_id = genres.id
