@@ -14,17 +14,16 @@ function MovieDetails() {
     const history = useHistory();
     const params = useParams(); //this is getting the params from my /details url
                                 //get the movie with an id that matches the id in my params 
-    const movie = useSelector(store => store.movies.find((movie) => movie.id == params.id));
-    const genres = useSelector(store => store.movieGenres)
-    
-
+    const movie = useSelector(store => store.movieDetails);
 
     useEffect( () => {
         // console.log('params is ', params.id);
         dispatch ({
             type: 'FETCH_GENRES_FOR_MOVIE',
-            payload: movie.id
+            payload: params.id
         })
+
+       
     },[params.id]) 
 
 
@@ -42,8 +41,8 @@ function MovieDetails() {
                     <h1>{movie.title}</h1> 
                     <img src={movie.poster}/> 
                     <div className="genres">
-                        {genres.map( genre => (  //map and display each genre for movie
-                            <div key={genre.id}>
+                        {movie.genre && movie.genre.map( genre => (  //map and display each genre for movie
+                            <div key={genre}>
                             <h3>{genre}</h3>
                             </div>
                             )

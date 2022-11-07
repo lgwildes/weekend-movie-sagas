@@ -20,17 +20,17 @@ router.get('/', (req, res) => {
 router.get('/:id', (req, res) => { //select all genres for given movie ID
 
   console.log('in router.get MOVIE GENREEEEEE 😠', req.params.id)
-  const query = `  SELECT json_agg(name) AS genre 
-                    FROM "genres"
-                    LEFT JOIN movies_genres ON movies_genres.genre_id = genres.id
-                    LEFT JOIN movies ON movies.id = movies_genres.movie_id
-                    WHERE movies.id = $1
-                    GROUP BY movies.title;`;
+  const query = `  SELECT json_agg(name) AS genre , movies.*
+                  FROM "genres"
+                  LEFT JOIN movies_genres ON movies_genres.genre_id = genres.id
+                  LEFT JOIN movies ON movies.id = movies_genres.movie_id
+                  WHERE movies.id = $1
+                  GROUP BY movies.id;`;
 
     pool.query(query, [req.params.id])
       .then( dbResult => {
         console.log('dbResult.rows is ', dbResult.rows)
-        res.send(dbResult.rows[0].genre)
+        res.send(dbResult.rows[0])
       })
       .catch( err => {
         console.log('error getting genre for movie', err)
