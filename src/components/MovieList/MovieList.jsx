@@ -25,6 +25,7 @@ function MovieList() {
     return (
         <main>
             <h1>My Film Collection</h1>
+                <Link to="/add-movie">Add Film</Link>
             <Grid container>
 
             <section className="movies">
