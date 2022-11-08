@@ -19,6 +19,7 @@ function App() {
         </Route>
 
         {/* Add Movie page */}
+        
       </Router>
     </div>
   );
