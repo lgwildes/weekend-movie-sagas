@@ -1,10 +1,16 @@
 import React, { useEffect } from 'react';
 import { useHistory, useParams } from "react-router-dom";
 import { useDispatch, useSelector } from 'react-redux';
-
+import { useState } from 'react';
 import { Button } from "@material-ui/core";
 
 function MovieForm() {
+
+    const [title, setTitle] = useState('');
+    const [poster, setPoster] = useState('');
+    const [description, setDescription] = useState('');
+    const [genre, setGenre] = useState('')
+
     const dispatch = useDispatch();
     const history = useHistory();
    
@@ -15,7 +21,14 @@ function MovieForm() {
     }, []);
 
     const genres = useSelector(store => store.genres)
-    const addMovie = dispatch({type: 'ADD_MOVIE'})
+    const addMovie = dispatch(
+        {type: 'ADD_MOVIE',
+        payload: {
+            title: title,
+            poster: poster,
+            description: description
+        }
+    })
     
     if(genres){
         return (
@@ -26,14 +39,18 @@ function MovieForm() {
                 onClick={() => {history.push('/')}} >Back to Collection
             </Button>
         
-            <form onSubmit={addMovie}>
-                <input type="text" placeholder="film title"/>
-                <input type="text" placeholder="poster url"/>
-                <textarea type="text" placeholder="movie description"/>
-                <label htmlFor="genres">select genres</label>
+            <form onSubmit={handleSubmit}>
+                <input onChange={(event) => setTitle(event.target.value)} 
+                        type="text" placeholder="film title"/>
+                <input onChange={(event) => setPoster(event.target.value)} 
+                        type="text" placeholder="poster url"/>
+                <textarea onChange={(event) => setDescription(event.target.value)}
+                        type="text" placeholder="movie description"/>
+                <label  onChange={(event) => setGenre({name: event.target.value})}
+                        htmlFor="genres">select genres</label>
                     <select id="genres" name="genres">
                         { genres && genres.map( genre => (
-                            <option value={genre.name}>{genre.name}</option>
+                            <option key={genre.name} value={genre.name}>{genre.name}</option>
                         ) )}
                     </select>
         
