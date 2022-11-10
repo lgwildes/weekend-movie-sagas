@@ -37,5 +37,6 @@ p {
 .App .my-super-special-btn {
     font-family: 'Jurassic Park';
     font-size: larger;
+    margin: 2em;
     
 }
