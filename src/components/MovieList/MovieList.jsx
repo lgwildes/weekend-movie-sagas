@@ -66,17 +66,7 @@ function MovieList() {
     );
 }
 
-{/* <section className="movies">
-{movies.map(movie => {
-    return ( */}
-{/* <div key={movie.id} > 
-<Link to={{pathname: `/details/${movie.id}`}}>
-<h3>{movie.title}</h3>
-<img src={movie.poster} alt={movie.title}/>
-</Link>
-</div> */}
-// })}
-// </section>
+
 
 export default MovieList;
 

@@ -21,6 +21,19 @@ function* rootSaga() {
     yield takeEvery('FETCH_MOVIES', fetchAllMovies);
     yield takeEvery('FETCH_GENRES', fetchAllGenres); //intercepts dispatch and calls function
     yield takeEvery ('FETCH_MOVIE_DETAILS', fetchMovieDetails);
+    yield takeEvery ('CREATE_MOVIE', createMovie);
+}
+
+function* createMovie(action) {
+    try {
+        console.log('NEW MOVIE action.payload is ', action.payload);
+        const newMovie = yield axios.post('/api/movie', action.payload);
+        
+        
+    } catch {
+        console.log('POST newMovie error')
+    }
+
 }
 
 function* fetchAllMovies() {
