@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { useHistory, useParams } from "react-router-dom";
 import {HashRouter as Router, Route, Link } from 'react-router-dom';
 import './MovieList.css'
 //importing MUI things
@@ -10,12 +11,14 @@ import Grid from "@material-ui/core/Grid";
 import Typography from '@mui/material/Typography';
 import { CardActionArea } from '@mui/material';
 import { shadows } from '@mui/system';
+import { Button } from "@material-ui/core";
 
 
 function MovieList() {
 
     const dispatch = useDispatch();
     const movies = useSelector(store => store.movies);
+    const history = useHistory();
 
     useEffect(() => {
         dispatch({ type: 'FETCH_MOVIES' });
@@ -25,7 +28,11 @@ function MovieList() {
     return (
         <main>
             <h1>My Film Collection</h1>
-                <Link to="/add-movie" className='link'>Add Film</Link>
+                <Button // button returns user to homepage List of movies
+                        className="button my-super-special-btn"
+                        variant="contained"
+                        onClick={() => { history.push('/add-movie') }} >Add Film
+                </Button>
             <Grid container>
 
             <section className="movies">
